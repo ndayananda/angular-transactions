@@ -1,0 +1,55 @@
+<section class="transaction">
+  <h1 class="transaction__title text-3xl font-bold text-gray-700">Transaction Details</h1>
+  <div *ngIf="!transaction">
+
+  </div>
+  <div *ngIf="transaction" class="mt-5">
+    <div 
+      class="transaction_details py-2 hover:bg-gray-100 hover:cursor-pointer"
+    >
+      <div class="flex mb-2">
+        <span class="w-[150px]">Name</span>
+        <span class="flex-1">{{ transaction.otherParty?.name || '' }}</span>
+      </div>
+    </div>
+
+    <div 
+      class="transaction_details py-2 hover:bg-gray-100 hover:cursor-pointer"
+    >
+      <div class="flex mb-2">
+        <span class="w-[150px]">Description</span>
+        <span class="flex-1">{{ transaction.description }}</span>
+      </div>
+    </div>
+
+    <div 
+      class="transaction_details py-2 hover:bg-gray-100 hover:cursor-pointer"
+    >
+      <div class="flex mb-2">
+        <span class="w-[150px]">IBan</span>
+        <span class="flex-1">{{ transaction.otherParty?.iban || '' }}</span>
+      </div>
+    </div>
+
+    <div 
+      class="transaction_details py-2 hover:bg-gray-100 hover:cursor-pointer"
+    >
+      <div class="flex mb-2">
+        <span class="w-[150px]">Amount</span>
+        <span class="flex-1">{{ transaction | currencyConverter | currency: 'EUR' }}</span>
+      </div>
+    </div>
+
+    <div 
+      class="transaction_details py-2 hover:bg-gray-100 hover:cursor-pointer"
+    >
+      <div class="flex mb-2">
+        <span class="w-[150px]">Date</span>
+        <span class="flex-1">{{ transaction.timestamp | date: 'medium'}}</span>
+      </div>
+    </div>
+
+    <div class="mt-10 flex"><a routerLink="/" class="bg-indigo-700 text-white px-10 py-3 rounded-md">Back</a></div>
+  </div>
+</section>
+

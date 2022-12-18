@@ -1,0 +1,21 @@
+<section class="transactions">
+  <h1 class="transactions__title text-3xl font-bold text-gray-700">Transactions</h1>
+  <div class="transactions_group mt-10" *ngFor="let transactionItem of transactionsData.days; trackBy: trackByFn" >
+    <h2 class="transactions__group-title text-xl font-bold text-gray-600">{{ transactionItem.id | date: 'mediumDate' }}</h2>
+    <div 
+      class="transactions_transaction-data py-4 border-solid border-b border-gray-300 hover:bg-gray-100 hover:cursor-pointer"
+      *ngFor="let transaction of transactionItem.transactions"
+      (click)="onTransactionClick(transactionItem.id, transaction.id)"
+    >
+      <div class="flex mb-2">
+        <span class="w-[150px]">Name</span>
+        <span class="flex-1">{{ transaction.otherParty?.name || '' }}</span>
+      </div>
+      <div class="flex">
+        <span class="w-[150px]">Amount</span>
+        <span class="flex-1">{{ transaction | currencyConverter | currency: 'EUR' }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
