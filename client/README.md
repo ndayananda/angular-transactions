@@ -22,3 +22,4 @@ A web application to list all the transaction group by Date and show the transac
 ### Run frontend application
 - Run ```npm install``` from client folder
 - Run ```npm start```
+- Run cypress e2e using ```npm run e2e```

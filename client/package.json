@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.0.0",
+  "name": "Transactions Application",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e": "cypress run --headless --browser chrome --config video=false --spec 'cypress/e2e/**/**.ts'",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "5.44.0",
     "@typescript-eslint/parser": "5.44.0",
     "autoprefixer": "^10.4.13",
+    "cypress": "^12.1.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",

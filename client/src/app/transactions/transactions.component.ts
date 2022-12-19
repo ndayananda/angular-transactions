@@ -6,8 +6,7 @@ import { TransactionData } from '../transactions.model';
 
 @Component({
   selector: 'app-transactions',
-  templateUrl: './transactions.component.html',
-  styleUrls: ['./transactions.component.css']
+  templateUrl: './transactions.component.html'
 })
 export class TransactionsComponent implements OnInit {
 

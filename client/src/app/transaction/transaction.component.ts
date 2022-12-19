@@ -5,8 +5,7 @@ import { Transaction } from '../transactions.model';
 
 @Component({
   selector: 'app-transaction',
-  templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.css']
+  templateUrl: './transaction.component.html'
 })
 export class TransactionComponent implements OnInit {
   transaction: Transaction | null = null;
